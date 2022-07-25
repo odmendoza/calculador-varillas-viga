@@ -9,7 +9,6 @@ ventana = tk.Tk()
 ventana.title("Calculadora de volumen de viga y número de varillas")
 ventana.config(width=500, height=500)
 
-
 # Funciones
 
 def calcular():
@@ -24,8 +23,9 @@ def calcular():
         diametro_varilla_ = int(diametro_varilla.get().replace(" mm", ""))
 
         # Cálculo de el volumen de la viga
-        volumen_viga_ = longuitud_ * altura_ * ancho_
-        lab_volumen_viga.config(text=f'El volumen de la viga es {volumen_viga_}')
+        volumen_viga_cm3 = longuitud_ * altura_ * ancho_
+        volumen_viga_m3 = volumen_viga_cm3 / 100
+        lab_volumen_viga.config(text=f'El volumen de la viga es { volumen_viga_m3 } m3')
 
         # Cálculo del volumen de una varilla en cm
         # (( pi * d**2 ) / 4 ) * long
